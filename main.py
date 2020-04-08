@@ -59,4 +59,4 @@ def add_to_translations_json(path_to_pot_file, path_to_json):
 for path in path_to_pot_files:
     add_translation_to_pot_file(path, api_key_azure, language)
 
-    add_to_translations_json(path, path_to_json)
+    #add_to_translations_json(path, path_to_json)
