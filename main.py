@@ -4,11 +4,11 @@ import json
 
 
 path_to_pot_files = [
-    '/Users/.../nbjs.pot',
-    '/Users/.../nbui.pot',
-    '/Users/.../notebook.pot'
+    './nbjs.pot',
+    './nbui.pot',
+    './notebook.pot'
 ]
-path_to_json = '/Users/.../nbjs.json'
+path_to_json = './nbjs.json'
 api_key_azure = ''
 language = 'nl'
 

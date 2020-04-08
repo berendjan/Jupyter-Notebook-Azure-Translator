@@ -42,6 +42,8 @@ def translate(text='', azureKey='', to_language='nl', json="true"):
         }
     ]
     request = requests.post(constructed_url, headers=headers, json=body)
+    if request.status_code != 200:
+        raise PermissionError('Did you check the Microsoft Azure API-Key')
     response = request.json()
     if json:
         return response
