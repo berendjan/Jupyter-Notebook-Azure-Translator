@@ -1,7 +1,7 @@
 # Jupyter-Notebook-Azure-Translator
 Contains Python Script to automatically translate the .pot and .json files necessary for adding other languages.
 
-# NOTES:
+## NOTES:
 The code to generate the `.json` file should de commented out, you need to generate it with the command below in step 13.
 
 ### Requirements
