@@ -17,6 +17,7 @@ The code to generate the `.json` file should de commented out, you need to gener
 3. Fill in the Azure key in the main file and change the language to your language.
 4. Run main and wait.
 5. Change files from `.pot` to `.po`.
+7. Go to your local Jupyter Notebook fork/repo
 6. Open a terminal window and in the notebook folder and do the following 
 
     `cd notebook/i18n/`
@@ -34,7 +35,7 @@ The code to generate the `.json` file should de commented out, you need to gener
 10. `mkdir LC_MESSAGES`
 11. `cd LC_MESSAGES`
 12. Copy the `.po` files to this folder.
-13. Do the following commands in the terminal where ${LANG} is your xx or xx_XX:
+13. Do the following commands in the terminal **at the folder `notebook/i18n` from step 6** where ${LANG} is your xx or xx_XX:
 ```
 pybabel compile -D notebook -f -l ${LANG} -i ${LANG}/LC_MESSAGES/notebook.po -o ${LANG}/LC_MESSAGES/notebook.mo
 pybabel compile -D nbui -f -l ${LANG} -i ${LANG}/LC_MESSAGES/nbui.po -o ${LANG}/LC_MESSAGES/nbui.mo

@@ -8,7 +8,7 @@ path_to_pot_files = [
     './nbui.pot',
     './notebook.pot'
 ]
-path_to_json = './nbjs.json'
+# path_to_json = './nbjs.json'
 api_key_azure = ''
 language = 'nl'
 
@@ -38,25 +38,27 @@ def add_translation_to_pot_file(path_to_file, AzureKey, language='nl'):
 
     po.save(path_to_file)
 
-def add_to_translations_json(path_to_pot_file, path_to_json):
-    with open(path_to_json, 'r') as file_read:
-        json_obj = json.load(file_read)
-    file_read.close()
-
-    po = polib.pofile(path_to_pot_file)
-    for entry in po.translated_entries():
-
-        if len(entry.msgid_plural) == 0:
-            json_obj['locale_data']['nbjs'][entry.msgid] = [entry.msgstr]
-        else:
-            json_obj['locale_data']['nbjs'][entry.msgid] = [msgstr for msgstr in entry.msgstr_plural.values()]
-    
-    with open(path_to_json, 'w') as file_write:
-        json.dump(json_obj, file_write, indent=4,
-                 ensure_ascii=False, separators=(',', ': '))
-    file_write.close()
 
 for path in path_to_pot_files:
     add_translation_to_pot_file(path, api_key_azure, language)
+
+# def add_to_translations_json(path_to_pot_file, path_to_json):
+#     with open(path_to_json, 'r') as file_read:
+#         json_obj = json.load(file_read)
+#     file_read.close()
+
+#     po = polib.pofile(path_to_pot_file)
+#     for entry in po.translated_entries():
+
+#         if len(entry.msgid_plural) == 0:
+#             json_obj['locale_data']['nbjs'][entry.msgid] = [entry.msgstr]
+#         else:
+#             json_obj['locale_data']['nbjs'][entry.msgid] = [msgstr for msgstr in entry.msgstr_plural.values()]
+    
+#     with open(path_to_json, 'w') as file_write:
+#         json.dump(json_obj, file_write, indent=4,
+#                  ensure_ascii=False, separators=(',', ': '))
+#     file_write.close()
+
 
     #add_to_translations_json(path, path_to_json)
